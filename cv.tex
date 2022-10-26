@@ -51,7 +51,7 @@
     a4paper,
     lmargin=1cm, 
     rmargin=1cm,
-    tmargin=0.5cm,
+    tmargin=0.75cm,
     bmargin=0.5cm
  }
 
@@ -101,7 +101,7 @@
 % non-numbered pages
 \pagestyle{empty} 
 
-%% custom environments %%
+% headings for resume items 
 \newcommand{\workheading}[4]{
 		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
 			\textbf{#1} @ \textit{#2} & \textit{#3} $|$ #4 \\
@@ -120,16 +120,10 @@
 		\end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\hack}[3]{
-		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-			\textbf{#1} @ #2 & #3 \\
-		\end{tabular*}\vspace{-1pt}
-}
-
-\newcommand{\award}[4]{
+\newcommand{\awardheading}[4]{
 		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
 			\textbf{#1} \textit{#4} & \textit{#2} $|$ #3 \\
-		\end{tabular*}\vspace{-1pt}
+		\end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\CVitem}[1]{
@@ -145,11 +139,13 @@
 \newcommand{\spaceaftersectionheading}{\vspace{-7pt}}
 \newcommand{\spaceaftersesctions}{\vspace{-5pt}}
 
+% define environment for each section 
 \newenvironment{skill}[1]{\textbf{#1}: }{\vspace{-7pt}}
 \newenvironment{work}[4]{\workheading{#1}{#2}{#3}{#4}}{}
 \newenvironment{project}[3]{\projheading{#1}{#2}{#3}}{}
 \newenvironment{school}[4]{\eduheading{#1}{#2}{#3}{#4}}{}
 \newenvironment{extra}[3]{\projheading{#1}{#2}{#3}}{}
+\newenvironment{award}[4]{\awardheading{#1}{#2}{#3}{#4}}{}
 
 %% HEADER %%
 
@@ -170,16 +166,18 @@
 \spaceaftersectionheading
 \school{McGill University}{3.71 / 4.00}{Montreal, QC}{Sep. 2019 -- May 2023}{
     \BeginCVItemList
-    \CVitem{B.A. in \textbf{Computer Science} with a Minor in \textbf{Earth \& Planetary Sciences} \& a Supplementary Minor Concentration in Computer Science.}
+    \CVitem{B.A. in \textbf{Computer Science}, Minor in \textbf{Earth \& Planetary Sciences} \& Supp. Minor Conc. in Comp. Sci.}
     % \CVitem{\textit{Relevant Coursework}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
     \EndCVItemList
 }\spacebetweenitems
 
 \spaceaftersesctions
 \section{Skills}
-\spaceaftersectionheading    \skill{Programming Languages}{\small Python, C++, C, Java, R, Julia, MATLAB, HTML/CSS, OCaml, MIPS Assembly.}\\
-    \skill{Tools}{\small Git, Unix, \LaTeX, Jupyter, AWS EC2, VS Code, QGIS, ArcGIS Pro, Microsoft Office Suite, Windows, MacOS.}\\
+\spaceaftersectionheading    
+\skill{Programming Languages}{\small Python, C++, C, Java, R, Bash, Julia, MATLAB, HTML/CSS, OCaml, MIPS Assembly.}\\
+    \skill{Tools}{\small Git, Unix, \LaTeX, Jupyter, AWS EC2, VS Code, QGIS, ArcGIS Pro.}\\
     % \skill{Inter-personal Skills}{\small Effective communicator \& problem-solver who is adaptable, creative, \& motivated.}
+\spacebetweenitems
 \spaceaftersesctions
 
 \section{Experience}
@@ -187,8 +185,7 @@
 \work{Data Science Intern}{\href{https://www.esri.com/en-us/home}{Esri}}{Remote}{May 2022 -- Aug. 2022}{ 
     \BeginCVItemList
     \CVitem{Implemented an automated workflow for updating national hydrography datasets using Esri's Multi-Task Road Extractor \textbf{deep learning} model.}
-    \CVitem{Improved the baseline ML model by designing new input image layers \& geomorphological indicators.}
-    \CVitem{Improved the baseline model by ~4\% accuracy to \textbf{96.3\% accuracy and 0.85 MIOU} by designing new input image layers \& geomorphological indicators.}
+    \CVitem{Improved the baseline model by $\sim4$\% accuracy to \textbf{96.3\% accuracy \& 0.85 MIOU} by designing new input image layers \& geomorphological indicators.}
     \EndCVItemList
 }\spacebetweenitems
 
@@ -205,9 +202,9 @@
 %     \EndCVItemList
 % }\spacebetweenitems
 
-\work{Software Development Consultant}{\href{https://redbuddevelopment.com}{Redbud Development}}{Wilton, NY}{Jan. 2020 -- May 2021}{ 
+\work{Software Development Consultant}{\href{https://redbuddevelopment.com}{Redbud Development}}{Wilton, NY}{Jan. 2020 -- Aug. 2021}{ 
     \BeginCVItemList 
-    \CVitem{Designed \& built a macOS desktop app in Python that is used to process project budget data for clients.}
+    \CVitem{Designed \& built a macOS desktop app in Python to process design \& project budget data for clients.}
     \CVitem{Implementing the app into the workflow \textbf{reduced proposal creation time by 95\%.}}
     \EndCVItemList
 }\spacebetweenitems
@@ -216,7 +213,7 @@
     \BeginCVItemList 
     \CVitem{Strengthened in-house marketing analysis software by working with a team to build a \textbf{RESTful API} for accessing \& visualising marketing data.}
     \CVitem{Individually developed a pipeline in Python to standardise 10GB of NYS voter registration data to map on QGIS; map was designed to advise a spatially-informed political campaign strategy.}
-    \CVitem{\textbf{Taught} myself Python, Git, \& QGIS over the course of the internship. I also gained experience with parallel computing, \textbf{reducing execution time by 97\%}.}
+    \CVitem{\textbf{Self-taught} Python, Git, \& QGIS over the course of the internship. I also gained experience with parallel computing, \textbf{reducing pipeline execution time by 97\%}.}
     \EndCVItemList
 }\spacebetweenitems
 
@@ -228,20 +225,72 @@
 
 \spaceaftersesctions
 
+\section{Awards}
+\spaceaftersectionheading
+\BeginCVItemList
+% \CVitem{Won \textbf{Bogo Hack} at MAIS Hacks 2022 with a \href{https://devpost.com/software/read-between-the-wines}{web app} (\textit{Python, Google Earth Engine}) that predicts the price \& quality of a bottle of wine from climatological conditions of the year \& region it was produced.}
+
+\CVitem{Won both \textbf{Best Design} \& \textbf{Most Fun \& Creative} hack leading a team of 3 to design a COVID-19 spoof of \href{https://pacdemic-man-2vsjz.ondigitalocean.app}{Pac-Man WebGL game} using \textit{Unity Game Engine}, competing against 332 participants at \href{https://devpost.com/software/mcha-ck-fee-antivirus-2022-pan-demic-man}{McHacks9}.}
+
+\CVitem{Awarded \textbf{Best AI Hack for Art} against 111 participants at MAIS Hacks 2021 for \href{https://devpost.com/software/maispeare}{MAISpeare}, a LSTM-driven (\textit{Python, HTML/CSS}) web app that generates a poem from any image.}
+
+\CVitem{Won \textbf{Best Overall Hack} at MAIS Hacks 2020 by leading a team against 115 participants to create a XGBoost-driven \href{https://devpost.com/software/mbti-personality-classifier-2eho6w}{web app} (\textit{Python, HTML/CSS}) that predicts MBTI Personality Type based on Twitter data.}
+\EndCVItemList
+
+\award{\href{https://www.geotop.ca/en/formation/bourses/bourses-geotop}{Geotop 2021 Scholarship Competition}}{Geotop}{2021}{(\$1500)}{
+    \BeginCVItemList
+    \CVitem{Selected based on my research proposal to \textit{Use ML to Indentify Landslides} \& my academic performance.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\award{Alma Mater Scholarship}{McGill University}{2019}{(\$3000)}{
+    \BeginCVItemList
+    \CVitem{Entrance bursary to McGill University for academic excellence in high school.}
+    \EndCVItemList
+}\spacebetweenitems
+
+\award{Stat Staff Professionals Computer Science Scholarship}{Saratoga Springs High School}{2019}{(\$1000)}{
+    \BeginCVItemList
+    \CVitem{Selected amongst $\sim40$ students for academic excellence \& demonstrated potential in computer science.}
+    \EndCVItemList
+}\spacebetweenitems
+
+% \award{Essay Contest Scholarship}{The College Advisor of New York}{2019}{(\$1500)}{
+%     \BeginCVItemList
+%     \CVitem{Selected based on my essay on the topic of \textit{Why a College Education is Important to You}.}
+%     \EndCVItemList
+% }\spacebetweenitems
+
+% \award{\href{https://apcentral.collegeboard.org/exam-administration-ordering-scores/scores/awards/scholar-awards}{National AP Scholar}}{College Board}{2019}{}{
+%     \BeginCVItemList
+%     \CVitem{Granted to U.S. students with an avg. score of at least 4 on all AP Exams, \& scores of $\geq4$ on 8+ exams.}
+%     \EndCVItemList
+% }\spacebetweenitems
+
+% \award{\href{https://apcentral.collegeboard.org/exam-administration-ordering-scores/scores/awards/scholar-awards}{AP Scholar with Distinction}}{College Board}{2018, 2019}{}{
+%     \BeginCVItemList
+%     \CVitem{Granted to students with an avg. score of at least 3.5 on all AP Exams, \& scores $\geq3$ on 5+ exams.}
+%     \EndCVItemList
+% }\spacebetweenitems
+
+% \award{Academic High Honor Roll}{Saratoga Springs High School}{2015 -- 2019}{}{}\spacebetweenitems
+
+\spaceaftersesctions
+
 \section{Projects}
 \spaceaftersectionheading
 
-\project{U-Net Tool For Geospatial Analysis}{Interdisciplinary Research}{Sep. 2022 -- Present}{
+\project{U-Net Tool For Geospatial Analysis}{Research @ McGill University}{Sep. 2022 -- Present}{
     \BeginCVItemList
-    \CVitem{Collaborating with \href{https://scholar.google.ca/citations?user=Q3Hc-jEAAAAJ&hl=en}{Dr. Matthew Tarling} to implement a \textbf{U-Net image segmentation model} that can be used by researchers to analyze geospatial problems.}
+    \CVitem{Creating a plug \& chug \textbf{U-Net image segmentation} tool that can be used analyze geospatial problems.}
     \CVitem{Our objective is to create a tool that can be used by anyone, regardless of their technical background.}
     \EndCVItemList
 }\spacebetweenitems
 
-\project{\href{https://tensorboard.dev/experiment/1Wfk0uKbT0OTM34i7SzliA}{Using Machine Learning to Identify Landslides}}{Interdisciplinary Research}{May 2021 -- Present}{
+\project{\href{https://tensorboard.dev/experiment/1Wfk0uKbT0OTM34i7SzliA}{Using Machine Learning to Identify Landslides}}{Research @ McGill University}{May 2021 -- Present}{
     \BeginCVItemList
-    \CVitem{Independently designed a research project to implement an image segmentation ML model to identify landslides using new geological and physical indicators.}
-    \CVitem{Collaborating with the CGS to implement new methods into the landslide identification workflow \& to improve the performance of the model.}
+    \CVitem{Independently designed a research project to implement an image segmentation ML model to identify landslides using geological \& physical indicators.}
+    \CVitem{Currently \textbf{collaborating with the California Geological Survey} to implement new methods into the landslide identification workflow \& to improve the performance of the model.}
     \CVitem{Current interation of the model boasts \textbf{95.3\% accuracy \& a loss of 0.19.}}
     \EndCVItemList
 }\spacebetweenitems
@@ -263,37 +312,11 @@
     \EndCVItemList
 }\spacebetweenitems
 
-% National Honor Society (2017 – 2019)
+% todo National Honor Society (2017 – 2019)
 \spaceaftersesctions
 
 % \section{Professional Development}
 % \spaceaftersesctions
-
-\section{Awards}
-\spaceaftersectionheading
-\BeginCVItemList
-\CVitem{Awardrd both \textbf{Best Design} \& \textbf{Most Fun \& Creative} hack, leading a team of 3 to design a COVID-19 spoof of \href{https://pacdemic-man-2vsjz.ondigitalocean.app}{Pac-Man WebGL game} using Unity Game Engine, competing against 332 participants at \href{https://devpost.com/software/mcha-ck-fee-antivirus-2022-pan-demic-man}{McHacks9}.}
-\CVitem{Won \textbf{Best AI Hack for Art} against 111 participants at MAIS Hacks 2021 for \href{https://devpost.com/software/maispeare}{MAISpeare}, a LSTM-driven web app that generates a poem from any image.}
-\CVitem{Awarded \textbf{Best Overall Hack} in my first hackathon at MAIS Hacks 2020 by leading a team against 115 participants to create a XGBoost-driven web app that predicts a user's MBTI Personality Type based on their Tweet data.}
-\EndCVItemList
-
-% \hack{Most Useless Hack}{\href{https://devpost.com/software/read-between-the-wines}{MAIS Hacks 2022}}{Oct. 2022}
-% \hack{Best Design \& Most Creative}{\href{https://devpost.com/software/mcha-ck-fee-antivirus-2022-pan-demic-man}{McHacks9}}{Jan. 2022}
-% \hack{Best AI Hack for Art}{\href{https://devpost.com/software/maispeare}{MAIS Hacks 2021}}{Oct. 2021}
-% \hack{Best Overall Hack}{\href{https://devpost.com/software/mbti-personality-classifier-2eho6w}{MAIS Hacks 2020}}{Oct. 2020}
-\award{\href{https://www.geotop.ca/en/formation/bourses/bourses-geotop}{Geotop 2021 Scholarship Competition}}{Geotop}{2021}{(\$1500)}
-\award{Alma Mater Scholarship}{McGill University}{2019}{(\$3000)}
-\award{Stat Staff Professionals Computer Science Scholarship}{Saratoga Springs High School}{2019}{(\$1000)}
-% \award{\href{https://apstudents.collegeboard.org/awards-recognitions/ap-scholar-award}{National AP Scholar}}{College Board}{2019}{}
-% \award{\href{https://apstudents.collegeboard.org/awards-recognitions/ap-scholar-award}{AP Scholar with Distinction}}{College Board}{2018, 2019}{}
-% Academic High Honor Roll (2015 – 2019)
-% cany scholarship from dean 
-\spaceaftersesctions
-
-% hackathon wins 
-% research scholarship (jamie, geotop)
-% alma mater scholarship
-% cs award in high school 
 
 
 % \spaceaftersesctions
@@ -306,3 +329,8 @@
 \vfill
 \center{\footnotesize Last updated: \today}
 \end{document}
+
+% todo add all other stuff from old cv 
+% todo try a sans serif font 
+% todo make name look nicer (all caps, lighter first name?)
+% update linkedin 
