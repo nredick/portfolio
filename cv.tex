@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 % % fontspec allows you to use TTF/OTF fonts directly
 % \usepackage{fontspec}
@@ -65,10 +65,10 @@
 \usepackage{supertabular}
 \usepackage{tabularx}
 \newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
+\setlength{\fullcollw}{0.5\textwidth}
 
 %custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
@@ -127,7 +127,7 @@
 
 \newcommand{\CVitem}[1]{
 	\item[--]{
-		{#1\vspace{-8pt}}
+		{#1\vspace{-7pt}}
 	}
 }
 
@@ -150,7 +150,7 @@
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
     \huge{Nathalie Redick} \\[2pt] % \scshape
-    \large{\textit{United States \& Canada}} \\[2pt]
+    % \large{\textit{United States \& Canada}} \\[2pt]
     \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \ 
     \href{mailto:nathalieredick@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ nathalieredick@gmail.com} \ $|$ \ 
     \href{https://github.com/nredick}{\raisebox{-0.05\height}\faGithub\ nredick} \ $|$ \ 
@@ -159,11 +159,11 @@
 \end{tabularx}
 
 %% BODY %% 
-\vspace{-10pt}
+\vspace{-11pt}
 
 \section{Education}
 \spaceaftersectionheading
-\school{McGill University}{3.71 / 4.00}{Montr\'eal, QC}{Sep. 2019 -- May 2023}{
+\school{McGill University}{3.73 / 4.00}{Montr\'eal, QC}{Sep. 2019 -- May 2023}{
     \BeginCVItemList
     \CVitem{B.A. in \textbf{Computer Science}, Minor in \textbf{Earth \& Planetary Sciences} \& Supp. Minor Conc. in Comp. Sci.}
 
@@ -174,7 +174,10 @@
     % \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Mineralogy, Petrology, Geology in the Field, Earth Physics, Earth System Modelling, Structural Geology, Volcanology.}
 
     % % COMP SCI LIST 
-    \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
+    % \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
+
+    % % Extended COMP SCI LIST 
+    \CVitem{\textit{Relevant Courses}: Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
     % FINTECH LIST 
     % \CVitem{\textit{Relevant Coursework}: Macroeconomics, Microeconomics I \& II, Calculus (I, II, III), Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
@@ -184,17 +187,20 @@
 \spaceaftersections
 \section{Skills}
 \spaceaftersectionheading    
-    \skill{Programming Languages}{Python, C++, C, Java, R, Bash, Julia, MATLAB, HTML/CSS.} %, OCaml, MIPS Assembly.}\\
+    \skill{Programming Languages}{Python, C++, C, Java, R, Bash, Julia, MATLAB, HTML/CSS, OCaml, MIPS Assembly.}
+    \\\skill{Tools}{Git, Linux/Unix, \LaTeX, Jupyter, AWS EC2, VS Code, Numpy, Pandas, Tensorflow, PyTorch, \& RESTful APIs.} %, QGIS, ArcGIS Pro.}
+    % \\\skill{Technologies}{Numpy, Matplotlib, GeoPandas, Shapely, Rasterio, ArcPy, PyProj, TorchGeo.}
     % \spacebetweenitems
-    \\\skill{Tools}{Git, Unix, \LaTeX, Jupyter, AWS EC2, VS Code, QGIS, ArcGIS Pro.}
-    % \skill{Inter-personal Skills}{\small Effective communicator \& problem-solver who is adaptable, creative, \& motivated.}
+    % \\\skill{Inter-personal Skills}{\small Effective communicator \& problem-solver who is adaptable, creative, \& motivated.}
+\spaceaftersections
 \spaceaftersections
 
 \section{Experience}
 \spaceaftersectionheading
 \work{Data Science Intern}{\href{https://www.esri.com/en-us/home}{Esri}}{Remote}{May 2022 -- Aug. 2022}{ 
     \BeginCVItemList
-    \CVitem{Implemented an automated workflow for updating national hydrography datasets using Esri's Multi-Task Road Extractor \textbf{deep learning} model.}
+    \CVitem{Implemented an automated workflow for updating national hydrography datasets using the Multi-Task Road Extractor \textbf{deep learning} model.}
+    % \CVitem{Gained experience with geospatial data formats such as GeoTIFFs, ESRI Shapefiles, TIFFs, and Geopackages.}
     \CVitem{Improved the baseline model by $\sim4$\% accuracy to \textbf{96.3\% accuracy \& 0.85 MIOU} by designing new input image layers \& geomorphological indicators.}
     \EndCVItemList
 }\spacebetweenitems
@@ -206,11 +212,11 @@
 %     \EndCVItemList
 % }\spacebetweenitems
 
-% \work{Undergraduate Research Assistant}{\href{https://www.eps.mcgill.ca/~crowe/EQprocesses}{EQP Research Group}}{McGill University}{Jan. 2021 -- Aug. 2021}{ 
-%     \BeginCVItemList 
-%     \CVitem{Individually designed \& built a website using \textbf{HTML/CSS \& some JS} to communicate seismological data of Qu\'ebec to promote public awareness about local earthquake hazards.}
-%     \EndCVItemList
-% }\spacebetweenitems
+\work{Undergraduate Research Assistant}{\href{https://www.eps.mcgill.ca/~crowe/EQprocesses}{EQP Research Group}}{McGill University}{Jan. 2021 -- Aug. 2021}{ 
+    \BeginCVItemList 
+    \CVitem{Individually designed \& built a website using \textbf{HTML/CSS \& some JS} to communicate seismological data of Qu\'ebec to promote public awareness about local earthquake hazards.}
+    \EndCVItemList
+}\spacebetweenitems
 
 % \work{Software Development Consultant}{\href{https://redbuddevelopment.com}{Redbud Development}}{Wilton, NY}{Jan. 2020 -- Aug. 2021}{ 
 %     \BeginCVItemList 
@@ -235,9 +241,9 @@
 
 \spaceaftersections
 
-\section{Projects}
+% \section{Projects}
+\section{Research}
 \spaceaftersectionheading
-
 \project{Machine Learning For Geospatial Analysis}{McGill University}{Sep. 2022 -- Present}{
     \BeginCVItemList
     \CVitem{Creating a guided machine learning workflow for geospatial analysis.}
@@ -247,7 +253,7 @@
 
 \project{\href{https://tensorboard.dev/experiment/1Wfk0uKbT0OTM34i7SzliA}{Using U-Net to Identify Landslides}}{McGill University}{May 2021 -- Present}{
     \BeginCVItemList
-    \CVitem{Independently designed a research project to implement an image segmentation ML model to identify landslides using geological \& physical indicators.}
+    \CVitem{Independently implementing an image segmentation ML model to identify landslides using geophysical indicators.}
     \CVitem{Currently \textbf{collaborating with the California Geological Survey} to expand the project scope.} %implement new methods into the landslide identification workflow \& to improve the performance of the model.
     \CVitem{Current interation of the model boasts \textbf{95.3\% accuracy \& a loss of 0.19.}}
     \EndCVItemList
@@ -337,11 +343,11 @@
 
 \section{Extra-curriculars}
 \spaceaftersectionheading
-\extra{Member}{\href{https://mcgillai.com}{McGill Artificial Intelligence Society}}{Sep. 2022 -- Present}{
-    \BeginCVItemList
-    \CVitem{Participated in monthly discussions on AI, attended workshops, \& participated in other events.}
-    \EndCVItemList
-}\spacebetweenitems
+% \extra{Member}{\href{https://mcgillai.com}{McGill Artificial Intelligence Society}}{Sep. 2022 -- Present}{
+%     \BeginCVItemList
+%     \CVitem{Participated in monthly discussions on AI, attended workshops, \& participated in other events.}
+%     \EndCVItemList
+% }\spacebetweenitems
 
 \extra{Vice President Communications}{\href{https://www.monteregiansociety.com}{The Monteregian Society} at McGill University}{Sep. 2020 -- Present}{
     \BeginCVItemList
@@ -359,22 +365,22 @@
 % todo SWAM volunteering 
 \spaceaftersections
 
-% \section{Professional Development}
-% \spaceaftersectionheading
-% \project{\href{https://www.agu.org/Events/FM20/SCIWS12-15-Tuesday-December}{\textbf{SCIWS12 Tutorial on Machine Learning \& Deep Learning}}}{American Geoscience Union}{Dec. 2020}{
-%     \BeginCVItemList
-%     \CVitem{Attended a technical workshop on machine learning \& deep learning for the environmental \& geosciences.}
-%     \EndCVItemList
-% }\spacebetweenitems
+\section{Professional Development}
+\spaceaftersectionheading
+\project{\href{https://www.agu.org/Events/FM20/SCIWS12-15-Tuesday-December}{\textbf{SCIWS12 Tutorial on Machine Learning \& Deep Learning}}}{American Geoscience Union}{Dec. 2020}{
+    \BeginCVItemList
+    \CVitem{Attended a technical workshop on machine learning \& deep learning for the environmental \& geosciences.}
+    \EndCVItemList
+}\spacebetweenitems
 
-% \project{\href{https://mcgillai.com/mais202}{\textbf{MAIS 202: Accelerated Introduction to ML}}}{McGill Artificial Intelligence Society}{Jan. 2020 -- Apr. 2020}{
-%     \BeginCVItemList
-%     \CVitem{Selected through a technical interview to participate in a 12-week accelerated course of ML.} % through weekly lectures, assignments, \& a final project fair
-%     \CVitem{\textbf{Webscraped data} to train a \textbf{CNN} to classify geologic sample images into 4 classes; deployed as a webapp.}
-%     \EndCVItemList
-% }\spacebetweenitems
+\project{\href{https://mcgillai.com/mais202}{\textbf{MAIS 202: Accelerated Introduction to ML}}}{McGill Artificial Intelligence Society}{Jan. 2020 -- Apr. 2020}{
+    \BeginCVItemList
+    \CVitem{Selected through a technical interview to participate in a 12-week accelerated course of ML.} % through weekly lectures, assignments, \& a final project fair
+    \CVitem{\textbf{Webscraped data} to train a \textbf{CNN} to classify geologic sample images into 4 classes; deployed as a webapp.}
+    \EndCVItemList
+}\spacebetweenitems
 
-% \spaceaftersections
+\spaceaftersections
 
 % \section*{Field Experience}
 % \spaceaftersectionheading
