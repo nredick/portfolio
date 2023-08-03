@@ -19,7 +19,7 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[scale=1]{geometry}
 \usepackage{enumitem}
 
 %tabularx environment
@@ -78,7 +78,7 @@
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 %for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+% \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -92,6 +92,11 @@
 
 %debug page outer frames
 % \usepackage{showframe}
+
+% publications 
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource[location=remote]{https://www.zotero.org/nredick/publications}
+\usepackage{citeall}
 
 
 \begin{document}
@@ -151,11 +156,12 @@
 \begin{tabularx}{\linewidth}{@{} C @{}}
     \huge{Nathalie Redick} \\[2pt] % \scshape
     % \large{\textit{United States \& Canada}} \\[2pt]
-    \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \ 
+    % \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \ 
     \href{mailto:nathalieredick@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ nathalieredick@gmail.com} \ $|$ \ 
     \href{https://github.com/nredick}{\raisebox{-0.05\height}\faGithub\ nredick} \ $|$ \ 
-    \href{https://linkedin.com/in/nredick}{\raisebox{-0.05\height}\faLinkedin\ nredick} 
-    % \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \
+    \href{https://linkedin.com/in/nredick}{\raisebox{-0.05\height}\faLinkedin\ nredick} \ $|$ \
+    \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ\&hl=en}{\raisebox{-0.05\height}\faGraduationCap \ Google Scholar}
+    % \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ&hl=en}{\raisebox{-0.05\height}\faGlobe \ Google Scholar Profile} 
 \end{tabularx}
 
 %% BODY %% 
@@ -163,9 +169,9 @@
 
 \section{Education}
 \spaceaftersectionheading
-\school{McGill University}{3.73 / 4.00}{Montr\'eal, QC}{Sep. 2019 -- May 2023}{
+\school{McGill University}{3.75 / 4.00}{Montr\'eal, QC}{Sep. 2019 -- May 2023}{
     \BeginCVItemList
-    \CVitem{B.A. in \textbf{Computer Science}, Minor in \textbf{Earth \& Planetary Sciences} \& Supp. Minor Conc. in Comp. Sci.}
+    \CVitem{B.A. in \textbf{Computer Science}, Minor in \textbf{Earth \& Planetary Sciences} \& Supp. Minor Conc. in \textbf{Computer Science}.}
 
     % GEOLOGY LIST 
     % \CVitem{\textit{Relevant Courses}: Mineralogy, Petrology, Geology in the Field, Field School I, Earth Physics, Earth System Modelling, Structural Geology, Volcanology, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
@@ -177,7 +183,7 @@
     % \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
     % % Extended COMP SCI LIST 
-    \CVitem{\textit{Relevant Courses}: Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
+    % \CVitem{\textit{Relevant Courses}: Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
     % FINTECH LIST 
     % \CVitem{\textit{Relevant Coursework}: Macroeconomics, Microeconomics I \& II, Calculus (I, II, III), Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
@@ -197,6 +203,13 @@
 
 \section{Experience}
 \spaceaftersectionheading
+
+\work{Technology Analyst}{\href{https://www.esri.com/en-us/home}{Morgan Stanley}}{Montreal, QC}{Aug 2023 -- Present}{ 
+    \BeginCVItemList
+    \CVitem{Currently enrolled in the Technology Analyst training program (TAP).}
+    \EndCVItemList
+}\spacebetweenitems
+
 \work{Data Science Intern}{\href{https://www.esri.com/en-us/home}{Esri}}{Remote}{May 2022 -- Aug. 2022}{ 
     \BeginCVItemList
     \CVitem{Implemented an automated workflow for updating national hydrography datasets using the Multi-Task Road Extractor \textbf{deep learning} model.}
@@ -207,16 +220,16 @@
 
 % \work{Project Manager}{RedQuoin}{Wilton, NY}{May 2021 -- Aug. 2021}{ 
 %     \BeginCVItemList 
-%     \CVitem{Facilitated communication between the software engineer, business consultant, \& the head of the start-up.}
+%     \CVitem{Worked part-time to facilitate communication between the software engineer, business consultant, \& the head of the start-up.}
 %     \CVitem{Conceptualized the design of the software's UI/UX \& visual identity to improve user experience.}
 %     \EndCVItemList
 % }\spacebetweenitems
 
-\work{Undergraduate Research Assistant}{\href{https://www.eps.mcgill.ca/~crowe/EQprocesses}{EQP Research Group}}{McGill University}{Jan. 2021 -- Aug. 2021}{ 
-    \BeginCVItemList 
-    \CVitem{Individually designed \& built a website using \textbf{HTML/CSS \& some JS} to communicate seismological data of Qu\'ebec to promote public awareness about local earthquake hazards.}
-    \EndCVItemList
-}\spacebetweenitems
+% \work{Undergraduate Research Assistant}{\href{https://www.eps.mcgill.ca/~crowe/EQprocesses}{EQP Research Group}}{McGill University}{Jan. 2021 -- Aug. 2021}{ 
+%     \BeginCVItemList 
+%     \CVitem{Individually designed \& built a website using \textbf{HTML/CSS \& some JS} to communicate seismological data of Qu\'ebec to promote public awareness about local earthquake hazards.}
+%     \EndCVItemList
+% }\spacebetweenitems
 
 % \work{Software Development Consultant}{\href{https://redbuddevelopment.com}{Redbud Development}}{Wilton, NY}{Jan. 2020 -- Aug. 2021}{ 
 %     \BeginCVItemList 
@@ -225,7 +238,7 @@
 %     \EndCVItemList
 % }\spacebetweenitems
 
-\work{Software Engineering Intern}{\href{http://bluespiral.io}{Blue Spiral Interactive}}{Saratoga Springs, NY}{Jun. 2019 -- Aug. 2019}{ 
+\work{Software Engineer Intern}{\href{http://bluespiral.io}{Blue Spiral Interactive/Albany IT Group}}{Saratoga Springs, NY}{Jun. 2019 -- Aug. 2019}{ 
     \BeginCVItemList 
     \CVitem{Strengthened in-house marketing analysis software by working with a team to build a \textbf{RESTful API} for accessing \& visualising marketing data.}
     % \CVitem{Individually developed a pipeline in Python to standardise 10GB of NYS voter registration data to map on QGIS; map was designed to advise a spatially-informed political campaign strategy.}
@@ -233,11 +246,23 @@
     \EndCVItemList
 }\spacebetweenitems
 
-\work{Software Development Intern}{\href{https://garnetriver.com}{Garnet River}}{Saratoga Springs, NY}{Feb. 2019 -- Jun. 2019}{ 
-    \BeginCVItemList 
-    \CVitem{Evaluated the efficacy \& usability of computer vision products from Microsoft, Google, \& AWS.}
-    \EndCVItemList
-\spacebetweenitems
+% \work{Software Development Intern}{\href{https://garnetriver.com}{Garnet River}}{Saratoga Springs, NY}{Feb. 2019 -- Jun. 2019}{ 
+%     \BeginCVItemList 
+%     \CVitem{Evaluated the efficacy \& usability of computer vision products from Microsoft, Google, \& AWS.}
+%     \EndCVItemList
+% }\spacebetweenitems
+
+% \work{Busser}{\href{https://dzrestaurants.com}{DZ Restaurants}}{Saratoga Springs, NY}{May 2018 -- Aug. 2018}{ 
+%     \BeginCVItemList 
+%     \CVitem{}
+%     \EndCVItemList
+% }\spacebetweenitems
+
+% \work{Lifeguard}{\href{https://srymca.org}{Saratoga Regional YMCA}}{Saratoga Springs, NY}{May 2017 -- Aug. 2018}{ 
+%     \BeginCVItemList 
+%     \CVitem{}
+%     \EndCVItemList
+% }\spacebetweenitems
 
 \spaceaftersections
 
@@ -253,8 +278,8 @@
 
 \project{\href{https://tensorboard.dev/experiment/1Wfk0uKbT0OTM34i7SzliA}{Using U-Net to Identify Landslides}}{McGill University}{May 2021 -- Present}{
     \BeginCVItemList
-    \CVitem{Independently implementing an image segmentation ML model to identify landslides using geophysical indicators.}
-    \CVitem{Currently \textbf{collaborating with the California Geological Survey} to expand the project scope.} %implement new methods into the landslide identification workflow \& to improve the performance of the model.
+    \CVitem{Implementing an image segmentation ML model to identify landslides using geophysical indicators.}
+    % \CVitem{Currently \textbf{collaborating with the California Geological Survey} to expand the project scope.} %implement new methods into the landslide identification workflow \& to improve the performance of the model.
     \CVitem{Current interation of the model boasts \textbf{95.3\% accuracy \& a loss of 0.19.}}
     \EndCVItemList
 }\spacebetweenitems
@@ -294,7 +319,7 @@
 \BeginCVItemList
 % \CVitem{Won \textbf{Bogo Hack} at MAIS Hacks 2022 with a \href{https://devpost.com/software/read-between-the-wines}{web app} (\textit{Python, Google Earth Engine}) that predicts the price \& quality of a bottle of wine from climatological conditions of the year \& region it was produced.}
 
-\CVitem{Won both \textbf{Best Design \& Most Fun \& Creative Game Dev Hack} against 332 participants at McHacks9 for \href{https://pacdemic-man-2vsjz.ondigitalocean.app/}{Pan(demic)-Man}, COVID-19-themed Pac-Man webGL game built with \textit{Unity Game Engine} \& C\#.}
+% \CVitem{Won both \textbf{Best Design \& Most Fun \& Creative Game Dev Hack} against 332 participants at McHacks9 for \href{https://pacdemic-man-2vsjz.ondigitalocean.app/}{Pan(demic)-Man}, COVID-19-themed Pac-Man webGL game built with \textit{Unity Game Engine} \& C\#.}
 
 \CVitem{Awarded \textbf{Best AI Hack for Art} against 111 participants at MAIS Hacks 2021 for \href{https://devpost.com/software/maispeare}{MAISpeare}, a LSTM-driven web app (\textit{Python, HTML/CSS}) that generates a poem from any image.}
 
@@ -313,11 +338,11 @@
     \EndCVItemList
 }\spacebetweenitems
 
-\award{Stat Staff Professionals Computer Science Scholarship}{Saratoga Springs High School}{2019}{(\$1000)}{
-    \BeginCVItemList
-    \CVitem{Selected amongst $\sim40$ students for academic excellence \& demonstrated potential in computer science.}
-    \EndCVItemList
-}\spacebetweenitems
+% \award{Stat Staff Professionals Computer Science Scholarship}{Saratoga Springs High School}{2019}{(\$1000)}{
+%     \BeginCVItemList
+%     \CVitem{Selected amongst $\sim40$ students for academic excellence \& demonstrated potential in computer science.}
+%     \EndCVItemList
+% }\spacebetweenitems
 
 % \award{Essay Contest Scholarship}{The College Advisor of New York}{2019}{(\$1500)}{
 %     \BeginCVItemList
@@ -356,6 +381,12 @@
     \EndCVItemList
 }\spacebetweenitems
 
+\extra{Member}{Machine Learning for Geoscience Reading Group at McGill University}{Jan. 2021 -- May 2021}{
+    \BeginCVItemList
+    \CVitem{Participated in an informal reading group with faculty and researchers to examine current papers in ML applications in the geosciences.}
+    \EndCVItemList
+}\spacebetweenitems
+
 % \extra{Member}{National Honor Society}{Sep. 2018 -- Jun. 2019}{
 %     \BeginCVItemList
 %     \CVitem{Completed 20 hours of community service annually.}
@@ -382,18 +413,30 @@
 
 \spaceaftersections
 
-% \section*{Field Experience}
+% \section{Field Experience}
 % \spaceaftersectionheading
 % \project{Field School I}{\href{https://www.mcgill.ca/study/2022-2023/courses/epsc-231}{McGill University}}{(2 Weeks) May 2021}{
 %     \BeginCVItemList
 %     \CVitem{Produced maps of geologic units \& structures in both Rainbow Basin, CA \& Dublin Gulch, CA.}
-%     \CVitem{Gained experience with field mapping, Brunton compass, \& topographic maps.}
+%     \CVitem{Gained experience with field mapping, using a Brunton compass, \& topographic maps.}
 %     \EndCVItemList
 % }%\spacebetweenitems
 % \spaceaftersections
 
-% \section{Publications}
-% \spaceaftersections
+\section{Publications}
+\spaceaftersections
+\begin{enumerate}
+    \item Redick, N. R. (2023). A Review of Pumice Raft Formation Environments, Saturation, and Dispersal Mechanisms. McGill Science Undergraduate Research Journal, 18(1), Article 1. \href{https://doi.org/10.26443/msurj.v18i1.187}{doi.org/10.26443/msurj.v18i1.187}
+\end{enumerate}
+\spaceaftersections
+\spaceaftersections
+
+\section{Presentations}
+\spaceaftersections
+\begin{enumerate}
+    \item Redick, N. R. (2023, April 11). Building an Accessible Machine Learning Workflow for Geospatial Analysis. Open Research Symposium, McGill Library, Montreal QC.
+\end{enumerate}
+\spaceaftersections
 
 
 %% FOOTER %% 

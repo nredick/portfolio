@@ -1,6 +1,6 @@
 ![build](https://github.com/nredick/portfolio/actions/workflows/build.yml/badge.svg
 )
-# Current Curriculum Vitae
+# Curriculum Vitae
 
 This repository contains the LaTeX source code for my CV. See my CV [here](https://nedick.github.io/portfolio/cv.pdf).
 
