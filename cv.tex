@@ -13,7 +13,7 @@
 % {Fontin.otf}
 
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
 
 %other packages for formatting
 \RequirePackage{color}
@@ -49,7 +49,7 @@
 \usepackage{geometry}
     \geometry{
     a4paper,
-    lmargin=1cm, 
+    lmargin=1cm,
     rmargin=1cm,
     tmargin=0.5cm,
     bmargin=0.5cm
@@ -60,7 +60,7 @@
 \usepackage{enumitem}
 
 % centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
@@ -73,7 +73,7 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
+%CV Sections inspired by:
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
@@ -94,7 +94,7 @@
 %debug page outer frames
 % \usepackage{showframe}
 
-% publications 
+% publications
 \usepackage[backend=biber, style=apa]{biblatex}
 \addbibresource[location=remote]{https://www.zotero.org/nredick/publications}
 \usepackage{citeall}
@@ -104,9 +104,9 @@
 \raggedright
 
 % non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
-% headings for resume items 
+% headings for resume items
 \newcommand{\workheading}[4]{
 		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
 			\textbf{#1} @ \textit{#2} & \textit{#3} $|$ #4 \\
@@ -144,7 +144,7 @@
 \newcommand{\spaceaftersectionheading}{\vspace{-4pt}}
 \newcommand{\spaceaftersections}{\vspace{-4pt}}
 
-% define environment for each section 
+% define environment for each section
 \newenvironment{skill}[1]{\textbf{#1}: }{\vspace{-4pt}}
 \newenvironment{work}[4]{\workheading{#1}{#2}{#3}{#4}}{}
 \newenvironment{project}[3]{\projheading{#1}{#2}{#3}}{}
@@ -157,15 +157,15 @@
 \begin{tabularx}{\linewidth}{@{} C @{}}
     \huge{Nathalie Redick} \\[2pt] % \scshape
     % \large{\textit{United States \& Canada}} \\[2pt]
-    % \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \ 
-    \href{mailto:nathalieredick@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ nathalieredick@gmail.com} \ $|$ \ 
-    \href{https://github.com/nredick}{\raisebox{-0.05\height}\faGithub\ nredick} \ $|$ \ 
+    % \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \
+    \href{mailto:nathalieredick@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ nathalieredick@gmail.com} \ $|$ \
+    \href{https://github.com/nredick}{\raisebox{-0.05\height}\faGithub\ nredick} \ $|$ \
     \href{https://linkedin.com/in/nredick}{\raisebox{-0.05\height}\faLinkedin\ nredick} \ $|$ \
     \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ\&hl=en}{\raisebox{-0.05\height}\faGraduationCap \ Google Scholar}
-    % \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ&hl=en}{\raisebox{-0.05\height}\faGlobe \ Google Scholar Profile} 
+    % \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ&hl=en}{\raisebox{-0.05\height}\faGlobe \ Google Scholar Profile}
 \end{tabularx}
 
-%% BODY %% 
+%% BODY %%
 \vspace{-11pt}
 
 \section{Education}
@@ -174,26 +174,26 @@
     \BeginCVItemList
     \CVitem{B.A. in \textbf{Computer Science}, Minor in \textbf{Earth \& Planetary Sciences} \& Supp. Minor Conc. in \textbf{Computer Science}.}
 
-    % GEOLOGY LIST 
+    % GEOLOGY LIST
     % \CVitem{\textit{Relevant Courses}: Mineralogy, Petrology, Geology in the Field, Field School I, Earth Physics, Earth System Modelling, Structural Geology, Volcanology, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
-    % alt 
+    % alt
     % \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Mineralogy, Petrology, Geology in the Field, Earth Physics, Earth System Modelling, Structural Geology, Volcanology.}
 
-    % % COMP SCI LIST 
+    % % COMP SCI LIST
     % \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
-    % % Extended COMP SCI LIST 
+    % % Extended COMP SCI LIST
     % \CVitem{\textit{Relevant Courses}: Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
-    % FINTECH LIST 
+    % FINTECH LIST
     % \CVitem{\textit{Relevant Coursework}: Macroeconomics, Microeconomics I \& II, Calculus (I, II, III), Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
     \EndCVItemList
 }\spacebetweenitems
 
 \spaceaftersections
 \section{Skills}
-\spaceaftersectionheading    
+\spaceaftersectionheading
     \skill{Programming Languages}{Python, C++, C, Java, R, Bash, Julia, MATLAB, HTML/CSS, OCaml, MIPS Assembly.}
     \\\skill{Tools}{Git, Linux/Unix, \LaTeX, Jupyter, AWS EC2, VS Code, Numpy, Pandas, Tensorflow, PyTorch, \& RESTful APIs.} %, QGIS, ArcGIS Pro.}
     % \\\skill{Technologies}{Numpy, Matplotlib, GeoPandas, Shapely, Rasterio, ArcPy, PyProj, TorchGeo.}
@@ -205,13 +205,13 @@
 \section{Experience}
 \spaceaftersectionheading
 
-\work{Technology Analyst}{\href{https://www.esri.com/en-us/home}{Morgan Stanley}}{Montreal, QC}{Aug 2023 -- Present}{ 
+\work{Technology Analyst}{\href{https://www.esri.com/en-us/home}{Morgan Stanley}}{Montreal, QC}{Aug 2023 -- Present}{
     \BeginCVItemList
     \CVitem{Currently enrolled in the Technology Analyst training program (TAP).}
     \EndCVItemList
 }\spacebetweenitems
 
-\work{Data Science Intern}{\href{https://www.esri.com/en-us/home}{Esri}}{Remote}{May 2022 -- Aug. 2022}{ 
+\work{Data Science Intern}{\href{https://www.esri.com/en-us/home}{Esri}}{Remote}{May 2022 -- Aug. 2022}{
     \BeginCVItemList
     \CVitem{Implemented an automated workflow for updating national hydrography datasets using the Multi-Task Road Extractor \textbf{deep learning} model.}
     % \CVitem{Gained experience with geospatial data formats such as GeoTIFFs, ESRI Shapefiles, TIFFs, and Geopackages.}
@@ -219,48 +219,48 @@
     \EndCVItemList
 }\spacebetweenitems
 
-% \work{Project Manager}{RedQuoin}{Wilton, NY}{May 2021 -- Aug. 2021}{ 
-%     \BeginCVItemList 
+% \work{Project Manager}{RedQuoin}{Wilton, NY}{May 2021 -- Aug. 2021}{
+%     \BeginCVItemList
 %     \CVitem{Worked part-time to facilitate communication between the software engineer, business consultant, \& the head of the start-up.}
 %     \CVitem{Conceptualized the design of the software's UI/UX \& visual identity to improve user experience.}
 %     \EndCVItemList
 % }\spacebetweenitems
 
-% \work{Undergraduate Research Assistant}{\href{https://www.eps.mcgill.ca/~crowe/EQprocesses}{EQP Research Group}}{McGill University}{Jan. 2021 -- Aug. 2021}{ 
-%     \BeginCVItemList 
+% \work{Undergraduate Research Assistant}{\href{https://www.eps.mcgill.ca/~crowe/EQprocesses}{EQP Research Group}}{McGill University}{Jan. 2021 -- Aug. 2021}{
+%     \BeginCVItemList
 %     \CVitem{Individually designed \& built a website using \textbf{HTML/CSS \& some JS} to communicate seismological data of Qu\'ebec to promote public awareness about local earthquake hazards.}
 %     \EndCVItemList
 % }\spacebetweenitems
 
-% \work{Software Development Consultant}{\href{https://redbuddevelopment.com}{Redbud Development}}{Wilton, NY}{Jan. 2020 -- Aug. 2021}{ 
-%     \BeginCVItemList 
+% \work{Software Development Consultant}{\href{https://redbuddevelopment.com}{Redbud Development}}{Wilton, NY}{Jan. 2020 -- Aug. 2021}{
+%     \BeginCVItemList
 %     \CVitem{Designed \& built a macOS desktop app in Python to process design \& project budget data for clients.}
 %     \CVitem{Implementing the app into the workflow \textbf{reduced proposal creation time by 95\%.}}
 %     \EndCVItemList
 % }\spacebetweenitems
 
-\work{Software Engineer Intern}{\href{http://bluespiral.io}{Blue Spiral Interactive/Albany IT Group}}{Saratoga Springs, NY}{Jun. 2019 -- Aug. 2019}{ 
-    \BeginCVItemList 
+\work{Software Engineer Intern}{\href{http://bluespiral.io}{Blue Spiral Interactive/Albany IT Group}}{Saratoga Springs, NY}{Jun. 2019 -- Aug. 2019}{
+    \BeginCVItemList
     \CVitem{Strengthened in-house marketing analysis software by working with a team to build a \textbf{RESTful API} for accessing \& visualising marketing data.}
     % \CVitem{Individually developed a pipeline in Python to standardise 10GB of NYS voter registration data to map on QGIS; map was designed to advise a spatially-informed political campaign strategy.}
     \CVitem{\textbf{Self-taught} Python, Git, \& QGIS over the course of the internship. I used parallel computing techniques to \textbf{reduce execution time by 97\%}.}
     \EndCVItemList
 }\spacebetweenitems
 
-% \work{Software Development Intern}{\href{https://garnetriver.com}{Garnet River}}{Saratoga Springs, NY}{Feb. 2019 -- Jun. 2019}{ 
-%     \BeginCVItemList 
+% \work{Software Development Intern}{\href{https://garnetriver.com}{Garnet River}}{Saratoga Springs, NY}{Feb. 2019 -- Jun. 2019}{
+%     \BeginCVItemList
 %     \CVitem{Evaluated the efficacy \& usability of computer vision products from Microsoft, Google, \& AWS.}
 %     \EndCVItemList
 % }\spacebetweenitems
 
-% \work{Busser}{\href{https://dzrestaurants.com}{DZ Restaurants}}{Saratoga Springs, NY}{May 2018 -- Aug. 2018}{ 
-%     \BeginCVItemList 
+% \work{Busser}{\href{https://dzrestaurants.com}{DZ Restaurants}}{Saratoga Springs, NY}{May 2018 -- Aug. 2018}{
+%     \BeginCVItemList
 %     \CVitem{}
 %     \EndCVItemList
 % }\spacebetweenitems
 
-% \work{Lifeguard}{\href{https://srymca.org}{Saratoga Regional YMCA}}{Saratoga Springs, NY}{May 2017 -- Aug. 2018}{ 
-%     \BeginCVItemList 
+% \work{Lifeguard}{\href{https://srymca.org}{Saratoga Regional YMCA}}{Saratoga Springs, NY}{May 2017 -- Aug. 2018}{
+%     \BeginCVItemList
 %     \CVitem{}
 %     \EndCVItemList
 % }\spacebetweenitems
@@ -375,7 +375,7 @@
 %     \EndCVItemList
 % }\spacebetweenitems
 
-\extra{Vice President Communications}{\href{https://www.monteregiansociety.com}{The Monteregian Society} at McGill University}{Sep. 2020 -- Present}{
+\extra{Vice President Communications}{\href{https://www.monteregiansociety.com}{The Monteregian Society} at McGill University}{Sep. 2020 -- Apr. 2023}{
     \BeginCVItemList
     \CVitem{Managed communications for the undergraduate student council for Earth \& Planetary Sciences.}
     \CVitem{Designed \& built the council's website to host student resources, events, \& other information.}
@@ -394,7 +394,7 @@
 %     \EndCVItemList
 % }\spacebetweenitems
 
-% todo SWAM volunteering 
+% todo SWAM volunteering
 \spaceaftersections
 
 \section{Professional Development}
@@ -440,12 +440,12 @@
 \spaceaftersections
 
 
-%% FOOTER %% 
+%% FOOTER %%
 \vfill
 \center{\footnotesize \textcolor[HTML]{666666}{Last updated: \today}}
 \end{document}
 
-% todo add all other stuff from old cv 
-% todo try a sans serif font 
+% todo add all other stuff from old cv
+% todo try a sans serif font
 % todo make name look nicer (all caps, lighter first name?)
-% update linkedin 
+% update linkedin
