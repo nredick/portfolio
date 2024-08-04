@@ -62,18 +62,26 @@
 % \setlength\bibitemsep{1em}
 
 % doc colours
-\definecolor{highlightcolor}{HTML}{EF9C3A}
-\definecolor{sectioncolor}{HTML}{2E70BF}
+\definecolor{highlightcolor}{HTML}{2e70bf}
+\definecolor{sectioncolor}{HTML}{1a406c}
 
 % setup hyperref package, and colours for links
-\usepackage[draft=false, colorlinks=false]{hyperref}
+\usepackage[draft=false, colorlinks=true]{hyperref}
 \hypersetup{
-    pdfborderstyle={/S/U/W 1},
+    % pdfborderstyle={/S/U/W 1},
     breaklinks,
     urlcolor=highlightcolor,
-    urlbordercolor=highlightcolor,
+    % urlbordercolor=highlightcolor,
     linkcolor=highlightcolor
 }
+
+% underline all links
+\makeatletter
+\patchcmd{\hyper@link@}
+  {{\Hy@tempb}{#4}}
+  {{\Hy@tempb}{\underline{#4}}}
+  {}{}
+\makeatother
 
 
 %custom \section
@@ -163,7 +171,7 @@
     \href{https://github.com/nredick}{\raisebox{-0.05\height}{\color{highlightcolor}\faGithub}\ nredick} \ $|$ \
     \href{https://linkedin.com/in/nredick}{\raisebox{-0.05\height}{\color{highlightcolor}\faLinkedin}\ nredick} \ $|$ \
     \href{https://nredick.github.io}{\raisebox{-0.05\height}{\color{highlightcolor}\faGlobe}\ nredick.github.io} \ $|$ \
-    \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ\&hl=en}{\raisebox{-0.05\height}{\color{highlightcolor}\faGraduationCap} \ Google Scholar}
+    \href{https://orcid.org/0009-0005-5028-5299}{\raisebox{-0.05\height}{\color{highlightcolor}\faOrcid} \ 0009-0005-5028-5299}
 \end{tabularx}
 
 %% BODY %%
@@ -281,7 +289,7 @@
     \EndCVItemList
 }\spacebetweenitems
 
-\project{\href{https://tensorboard.dev/experiment/1Wfk0uKbT0OTM34i7SzliA}{Using U-Net to Identify Landslides}}{McGill University}{May 2021 -- Present (On Hiatus)}{
+\project{Using U-Net to Identify Landslides}{McGill University}{May 2021 -- Present (On Hiatus)}{
     \BeginCVItemList
     \CVitem{Implementing an image segmentation ML model to identify landslides using geophysical indicators.}
     % \CVitem{Currently \textbf{collaborating with the California Geological Survey} to expand the project scope.} %implement new methods into the landslide identification workflow \& to improve the performance of the model.
@@ -380,7 +388,7 @@
 %     \EndCVItemList
 % }\spacebetweenitems
 
-\extra{Vice President Communications}{\href{https://www.monteregiansociety.com}{The Monteregian Society} at McGill University}{Sep. 2020 -- Apr. 2023}{
+\extra{Vice President Communications}{The Monteregian Society at McGill University}{Sep. 2020 -- Apr. 2023}{
     \BeginCVItemList
     \CVitem{Managed communications for the undergraduate student council for Earth \& Planetary Sciences.}
     \CVitem{Designed \& built the council's website to host student resources, events, \& other information.}
