@@ -1,17 +1,15 @@
 % !TeX root = cv.tex
+
 \documentclass[a4paper,10pt]{article}
+\usepackage{fontenc}
+% https://tug.org/FontCatalogue/sansseriffonts.html
+% \usepackage[sfdefault,light]{FiraSans}
+\usepackage[default]{sourcesanspro}
 
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
+% for making text lighter
+\usepackage{color}
+\definecolor{light}{rgb}{0.35, 0.35, 0.35}
+\def\light#1{{\color{light}#1}}
 
 \usepackage{url}
 \usepackage{parskip}
@@ -30,17 +28,6 @@
 \usepackage[english]{babel}
 \usepackage{csquotes}
 
-%----------FONT OPTIONS----------
-%  sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-\usepackage{charter}
-
 \pagestyle{fancy}
 \fancyhf{} % clear all header \& footer fields
 \fancyfoot{}
@@ -55,7 +42,6 @@
     tmargin=0.5cm,
     bmargin=0.5cm
  }
-
 
 %for lists within experience section
 \usepackage{enumitem}
@@ -102,6 +88,7 @@
 \usepackage{citeall}
 
 
+
 \begin{document}
 \raggedright
 
@@ -110,33 +97,33 @@
 
 % headings for resume items
 \newcommand{\workheading}[4]{
-		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-			\textbf{#1} @ \textit{#2} & \textit{#3} $|$ #4 \\
-		\end{tabular*}\vspace{-4pt}
+        \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} @ \textit{#2} & \textit{#3} $|$ #4 \\
+        \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\projheading}[3]{
-		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-			\textbf{#1} $|$ \textit{#2} & #3 \\
-		\end{tabular*}\vspace{-4pt}
+        \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} $|$ \textit{#2} & #3 \\
+        \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\eduheading}[4]{
-		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-			\textbf{#1} (#2) & \textit{#3} $|$ #4 \\
-		\end{tabular*}\vspace{-4pt}
+        \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} (#2) & \textit{#3} $|$ #4 \\
+        \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\awardheading}[4]{
-		\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-			\textbf{#1} \textit{#4} & \textit{#2} $|$ #3 \\
-		\end{tabular*}\vspace{-4pt}
+        \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} \textit{#4} & \textit{#2} $|$ #3 \\
+        \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\CVitem}[1]{
-	\item[--]{
-		{#1\vspace{-6.5pt}}
-	}
+    \item[--]{
+        {#1\vspace{-6.5pt}}
+    }
 }
 
 \newcommand{\BeginCVItemList}{\begin{itemize}[topsep=0pt]}
@@ -157,7 +144,9 @@
 %% HEADER %%
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-    \huge{Nathalie Redick} \\[5pt] % \scshape
+    \vspace{-8pt}
+    \huge{\light{NATHALIE} REDICK} \\ % \scshape
+    \vspace{1pt}
     % \large{\textit{United States \& Canada}} \\[2pt]
     % \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \
     \href{mailto:nathalie.redick@mail.mcgill.ca}{\raisebox{-0.05\height}\faEnvelope \ nathalie.redick@mail.mcgill.ca} \ $|$ \
@@ -177,16 +166,16 @@
     \CVitem{B.A. in \textbf{Computer Science}, Minor in \textbf{Earth \& Planetary Sciences} \& Supp. Minor Conc. in \textbf{Computer Science}.}
 
     % GEOLOGY LIST
-    % \CVitem{\textit{Relevant Courses}: Mineralogy, Petrology, Geology in the Field, Field School I, Earth Physics, Earth System Modelling, Structural Geology, Volcanology, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Machine Learning Applied to Climate Change.}
+    \CVitem{\textit{Coursework}: Mineralogy, Petrology, Geology in the Field, Field School I, Earth Physics, Earth System Modelling, Structural Geology, Volcanology, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Machine Learning Applied to Climate Change.}
 
     % alt
-    % \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Mineralogy, Petrology, Geology in the Field, Earth Physics, Earth System Modelling, Structural Geology, Volcanology.}
+    % \CVitem{\textit{Coursework}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Mineralogy, Petrology, Geology in the Field, Earth Physics, Earth System Modelling, Structural Geology, Volcanology.}
 
     % % COMP SCI LIST
-    \CVitem{\textit{Relevant Courses}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
+    % \CVitem{\textit{Coursework}: Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
     % % Extended COMP SCI LIST
-    % \CVitem{\textit{Relevant Courses}: Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
+    % \CVitem{\textit{Coursework}: Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
 
     % FINTECH LIST
     % \CVitem{\textit{Relevant Coursework}: Macroeconomics, Microeconomics I \& II, Calculus (I, II, III), Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.}
@@ -210,6 +199,7 @@
 
 \work{Technology Analyst}{\href{https://www.esri.com/en-us/home}{Morgan Stanley}}{Montr\'eal, QC}{Aug 2023 -- Present}{
     \BeginCVItemList
+    % todo: update this description
     \CVitem{Currently enrolled in the Technology Analyst training program (TAP).}
     \EndCVItemList
 }\spacebetweenitems
@@ -246,7 +236,7 @@
     \BeginCVItemList
     \CVitem{Improved in-house marketing analysis software by working with a team to build a \textbf{RESTful API} for visualising data.}
     % \CVitem{Individually developed a pipeline in Python to standardise 10GB of NYS voter registration data to map on QGIS; map was designed to advise a spatially-informed political campaign strategy.}
-    \CVitem{\textbf{Self-taught} Python, Git, \& QGIS over the course of the internship. I used parallel computing techniques to \textbf{reduce execution time by 97\%}.}
+    \CVitem{\textbf{Self-taught} Python, Git, \& QGIS during the internship. Used parallel computing to \textbf{reduce execution time by 97\%}.}
     \EndCVItemList
 }\spacebetweenitems
 
@@ -448,10 +438,9 @@
 
 %% FOOTER %%
 \vfill
-\center{\footnotesize \textcolor[HTML]{666666}{Last updated: \today}}
+\center{\footnotesize \light{Last updated: \today}}
 \end{document}
 
 % todo add all other stuff from old cv
-% todo try a sans serif font
 % todo make name look nicer (all caps, lighter first name?)
-% update linkedin
+% todo update linkedin
