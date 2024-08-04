@@ -1,10 +1,11 @@
 % !TeX root = cv.tex
 
 \documentclass[a4paper,10pt]{article}
-\usepackage{fontenc}
+\usepackage[T1]{fontenc}
 % https://tug.org/FontCatalogue/sansseriffonts.html
 % \usepackage[sfdefault,light]{FiraSans}
-\usepackage[default]{sourcesanspro}
+% \usepackage[default]{sourcesanspro}
+\usepackage[default]{lato}
 
 % for making text lighter
 \usepackage{color}
@@ -55,6 +56,26 @@
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.5\textwidth}
 
+%for publications
+% \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+% \addbibresource{citations.bib}
+% \setlength\bibitemsep{1em}
+
+% doc colours
+\definecolor{highlightcolor}{HTML}{EF9C3A}
+\definecolor{sectioncolor}{HTML}{2E70BF}
+
+% setup hyperref package, and colours for links
+\usepackage[unicode, draft=false, colorlinks=false]{hyperref}
+\hypersetup{
+    pdfborderstyle={/S/U/W 1},
+    breaklinks,
+    urlcolor=highlightcolor,
+    urlbordercolor=highlightcolor,
+    linkcolor=highlightcolor
+}
+
+
 %custom \section
 \usepackage{titlesec}
 \usepackage{multicol}
@@ -62,18 +83,9 @@
 
 %CV Sections inspired by:
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\color{sectioncolor} \large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%for publications
-% \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{HTML}{0466c8}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-% \addbibresource{citations.bib}
-% \setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -86,8 +98,6 @@
 % \addbibresource[location=remote]{https://www.zotero.org/nredick/publications}
 % \addbibresource{publications.bib}
 \usepackage{citeall}
-
-
 
 \begin{document}
 \raggedright
@@ -122,7 +132,7 @@
 
 \newcommand{\CVitem}[1]{
     \item[--]{
-        {#1\vspace{-6.5pt}}
+        {#1\vspace{-7pt}}
     }
 }
 
@@ -144,16 +154,16 @@
 %% HEADER %%
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-    \vspace{-8pt}
-    \huge{\light{NATHALIE} REDICK} \\ % \scshape
+    % \vspace{-4pt}
+    \huge{\scshape \light{NATHALIE} REDICK} \\ % \scshape
     \vspace{1pt}
     % \large{\textit{United States \& Canada}} \\[2pt]
-    % \href{tel:+15184104084}{\raisebox{-0.05\height}\faPhone \ +1 (518) 410 4084} \ $|$ \
-    \href{mailto:nathalie.redick@mail.mcgill.ca}{\raisebox{-0.05\height}\faEnvelope \ nathalie.redick@mail.mcgill.ca} \ $|$ \
-    \href{https://github.com/nredick}{\raisebox{-0.05\height}\faGithub\ nredick} \ $|$ \
-    \href{https://linkedin.com/in/nredick}{\raisebox{-0.05\height}\faLinkedin\ nredick} \ $|$ \
-    \href{https://nredick.github.io}{\raisebox{-0.05\height}\faGlobe\ nredick.github.io} \ $|$ \
-    \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ\&hl=en}{\raisebox{-0.05\height}\faGraduationCap \ Google Scholar}
+    % \href{tel:+15184104084}{\raisebox{-0.05\height}{\color{highlightcolor}\faPhone} \ +1 (518) 410 4084} \ $|$ \
+    \href{mailto:nathalie.redick@mail.mcgill.ca}{\raisebox{-0.05\height}{\color{highlightcolor}\faEnvelope} \ nathalie.redick@mail.mcgill.ca} \ $|$ \
+    \href{https://github.com/nredick}{\raisebox{-0.05\height}{\color{highlightcolor}\faGithub}\ nredick} \ $|$ \
+    \href{https://linkedin.com/in/nredick}{\raisebox{-0.05\height}{\color{highlightcolor}\faLinkedin}\ nredick} \ $|$ \
+    \href{https://nredick.github.io}{\raisebox{-0.05\height}{\color{highlightcolor}\faGlobe}\ nredick.github.io} \ $|$ \
+    \href{https://scholar.google.com/citations?user=lvM_6HMAAAAJ\&hl=en}{\raisebox{-0.05\height}{\color{highlightcolor}\faGraduationCap} \ Google Scholar}
 \end{tabularx}
 
 %% BODY %%
@@ -263,6 +273,7 @@
 % \section{Projects}
 \section{Research}
 \spaceaftersectionheading
+
 \project{Machine Learning For Geospatial Analysis}{McGill University}{Sep. 2022 -- Present}{
     \BeginCVItemList
     \CVitem{Creating a guided machine learning workflow for geospatial analysis.}
@@ -317,7 +328,8 @@
 
 % \CVitem{Awarded \textbf{Best AI Hack for Art} against 111 participants at MAIS Hacks 2021 for \href{https://devpost.com/software/maispeare}{MAISpeare}, a LSTM-driven web app (\textit{Python, HTML/CSS}) that generates a poem from any image.}
 
-% \CVitem{Won \textbf{Best Overall Hack} at MAIS Hacks 2020 by leading a team against 115 participants to create a XGBoost-driven \href{https://devpost.com/software/mbti-personality-classifier-2eho6w}{web app} (\textit{Python, HTML/CSS}) that predicts MBTI Personality Type based on Twitter data.}
+\CVitem{Won \textbf{Best Overall Hack} at MAIS Hacks 2020 by leading a team against 115 participants to create a XGBoost-driven \href{https://devpost.com/software/mbti-personality-classifier-2eho6w}{web app} (\textit{Python, HTML/CSS}) that predicts MBTI Personality Type based on Twitter data.}
+
 \EndCVItemList\spacebetweenitems
 
 \award{\href{https://www.geotop.ca/en/formation/bourses/bourses-geotop}{Geotop 2021 Scholarship Competition}}{Geotop}{2021}{(\$1500)}{
@@ -326,11 +338,11 @@
     \EndCVItemList
 }\spacebetweenitems
 
-\award{Alma Mater Scholarship}{McGill University}{2019}{(\$3000)}{
-    \BeginCVItemList
-    \CVitem{Entrance bursary to McGill University for academic excellence.}
-    \EndCVItemList
-}\spacebetweenitems
+% \award{Alma Mater Scholarship}{McGill University}{2019}{(\$3000)}{
+%     \BeginCVItemList
+%     \CVitem{Entrance bursary to McGill University for academic excellence.}
+%     \EndCVItemList
+% }\spacebetweenitems
 
 % \award{Stat Staff Professionals Computer Science Scholarship}{Saratoga Springs High School}{2019}{(\$1000)}{
 %     \BeginCVItemList
