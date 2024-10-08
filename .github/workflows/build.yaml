@@ -1,0 +1,47 @@
+# With some help from: https://gist.github.com/dgerosa/2e1f47a39180f39bde848e38243efa94
+
+name: build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DIR: .
+      FILE: resume # desired tex/pdf file name (without extension)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compile PDF
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: ${{ env.FILE }}
+          working_directory: ${{ env.DIR }}
+          compiler: lualatex
+          args: -lualatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Move PDF Artifact
+        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
+      - name: Upload PDF As Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILE }}.pdf
+          path: ./github_artifacts
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download PDF Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: github_artifacts
+      - name: Move
+        run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
+      - name: Deploy On Orphan Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_deploy
+          publish_branch: build
+          force_orphan: true
+          enable_jekyll: true
