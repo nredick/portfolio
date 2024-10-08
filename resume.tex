@@ -1,0 +1,418 @@
+% !TeX root = resume.tex
+\documentclass{resume} % custom class file
+\usepackage{resume} % custom styling
+
+%% PREAMBLE %%
+\usepackage[english]{babel}
+
+%% SET DEFAULTS %%
+% \renewcommand{\defaultseparator}{$|$} % ex. set the default separator
+
+%% END PREAMBLE %%
+
+%% BEGIN DOCUMENT %%
+\begin{document}
+
+%% RESUME HEADER %%
+\resumeheader[
+    alignment=l,
+    firstname=Nathalie,
+    lastname=Redick,
+    % location={Davis, California}
+]{
+    \inlinelocation{Davis, CA}\separator
+    \resumeheaderlink{tel:+15184104084}{+1 (518) 410-4084}[\faPhone]\separator
+    \resumeheaderlink{mailto:nrredick@ucdavis.edu}{nrredick@ucdavis.edu}[\faEnvelope]\separator
+    \resumeheaderlink{https://linkedin.com/in/nredick}{nredick}[\faLinkedin]\separator
+    \resumeheaderlink{https://github.com/nredick}{nredick}[\faGithub]\separator
+    \resumeheaderlink{https://orcid.org/0009-0005-5028-5299}{0009-0005-5028-5299}[\faOrcid]
+}
+
+%% EDUCATION %%
+\section{Education}
+
+\edu[
+    layout=2,
+    name={University of California, Davis},
+    location={Davis, CA},
+    date=\daterange{2024/09/01}{2026/06/07},
+    % gpa=3.75/4.00,
+    degree=MSc Geophysics
+]{
+    \begin{resumeitemize}
+        \item \textit{Coursework}: Regional Synthesis of Geophysical \& Geological Data for Geodynamic Modelling
+    \end{resumeitemize}
+}
+
+\edu[
+    layout=2,
+    name=McGill University,
+    location={Montreal, QC},
+    date=\daterange{2019/09/01}{2023/08/01},
+    gpa=3.75/4.00,
+    degree={BA Computer Science}
+]{
+    \begin{resumeitemize}
+        \item Minor in \textbf{Earth \& Planetary Sciences}, Supplementary Minor Concentration in Computer Science
+        % geology & cs
+        \item \textit{Relevant Coursework}: Mineralogy, Petrology, Geology in the Field, Field School I, Earth Physics, Earth System Modelling, Structural Geology, Volcanology, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Machine Learning Applied to Climate Change.
+        % ALT
+        % \item Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming, Mineralogy, Petrology, Geology in the Field, Earth Physics, Earth System Modelling, Structural Geology, Volcanology.
+        % COMP SCI
+        % \item Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.
+        % EXTENDED CS
+        % \item Intro to Software Systems, Intro to Computer Systems, Programming Languages \& Paradigms, Algorithms \& Data Structures, Data Science, Linear Algebra I \& II, Discrete Math, Probability, Statistics, Applied Machine Learning, Probabilistic Programming.
+    \end{resumeitemize}
+}
+
+%% EXPERIENCE %%
+\section{Experience}
+
+\experience[
+    layout=1, % 1 or 2
+    title=Technology Analyst,
+    company=Morgan Stanley,
+    location={Montreal, QC}, % use {} when you need a comma in the field
+    date=\daterange{2023/07/31}{2024/08/16},
+    % link=https://www.morganstanley.com
+]{
+    \begin{resumeitemize}
+        \item Worked collaboratively to provide agile metrics analysis for internal dev. teams globally, user support, \& documentation.
+        \item Utilized DB2 SQL, MongoDB, \& Python to process metrics \& maintain project infrastructure.
+    \end{resumeitemize}
+}
+
+\experience[
+    layout=1,
+    title=Data Science Intern,
+    company=Esri Canada,
+    location={Remote},
+    date=\daterange{2022/05/17}{2022/08/05},
+    % link=https://www.esri.ca
+]{
+    \begin{resumeitemize}
+        \item Automated a workflow for updating national hydrography data using the Multi-Task Road Extractor \textbf{deep learning} model.
+        % \item Gained experience with geospatial data formats such as GeoTIFFs, ESRI Shapefiles, TIFFs, \& Geopackages.
+        \item Improved the baseline model by $\sim$4\% accuracy to \textbf{96.3\% accuracy \& 0.85 MIOU} by designing new input image layers \& geomorphological indicators.
+    \end{resumeitemize}
+}
+
+% \experience[
+%     layout=1,
+%     title=Project Manager,
+%     company=RedQuoin,
+%     location={Wilton, NY},
+%     date=\daterange{2021/05/01}{2021/08/31},
+% ]{
+%     \begin{resumeitemize}
+%         \item Worked part-time to facilitate communication between the software engineer, business consultant, \& the head of the start-up.
+%         \item Conceptualized the design of the software's UI/UX \& visual identity to improve user experience.
+%     \end{resumeitemize}
+% }
+
+% \experience[
+%     layout=1,
+%     title=Software Development Consultant,
+%     company=Redbud Development,
+%     location={Wilton, NY},
+%     date=\daterange{2020/01/01}{2021/08/31},
+%     % link=https://www.esri.ca
+% ]{
+%     \begin{resumeitemize}
+%         \item Designed \& built a macOS desktop app in Python to process design \& project budget data for clients.
+%         \item Implementing the app into the workflow \textbf{reduced proposal creation time by 95\%.}
+%     \end{resumeitemize}
+% }
+
+% \experience[
+%     layout=1,
+%     title=Software Engineering Intern,
+%     company=Blue Spiral Interactive/Albany IT Group,
+%     location={Saratoga Springs, NY},
+%     date=\daterange{2019/06/01}{2019/08/31}, % check exact days
+%     % link=http://bluespiral.io
+% ]{
+%     \begin{resumeitemize}
+%         \item Improved in-house marketing analysis software by working with a team to build a \textbf{RESTful API} for visualising data.
+%         % \item Individually developed a pipeline in Python to standardise 10GB of NYS voter registration data to map on QGIS; map was designed to advise a spatially-informed political campaign strategy.
+%         \item Self-taught Python, Git, \& QGIS during the internship. Used parallel computing to \textbf{reduce execution time by 97\%}.
+%     \end{resumeitemize}
+% }
+
+% \experience[
+%     layout=1,
+%     title=Software Development Intern,
+%     company={Garnet River, LLC},
+%     location={Saratoga Springs, NY},
+%     date=\daterange{2019/02/01}{2019/06/01},
+%     link=https://www.example.com
+% ]{
+%     \begin{resumeitemize}
+%         \item Evaluated the efficacy \& usability of computer vision products from Microsoft, Google, \& AWS.
+%     \end{resumeitemize}
+% }
+
+% \experience[
+%     layout=1,
+%     title=Busser,
+%     company=DZ Restaurants,
+%     location={Saratoga Springs, NY},
+%     date=\daterange{2018/05/01}{2018/08/31},
+%     % link=https://www.example.com
+% ]{}
+
+% \experience[
+%     layout=1,
+%     title=Lifeguard,
+%     company=Saratoga Regional YMCA,
+%     location={Saratoga Springs, NY},
+%     date=\daterange{2017/05/01}{2018/08/31},
+%     % link=https://www.example.com
+% ]{}
+
+%% RESEARCH %%
+\section{Research}
+
+\experience[
+    layout=1,
+    title=Machine Learning For Geospatial Analysis,
+    company=McGill University,
+    location={Montreal, QC},
+    date=\daterange{2022/09/01}{2024/07/01},
+    link=https://www.example.com
+]{
+    Advised by Dr.~James Kirkpatrick \& Dr.~Matthew Tarling.
+    \begin{resumeitemize}
+        \item Designed a guided machine learning workflow for geospatial analysis.
+        \item Our objective was to create a tool that can be used by anyone, regardless of their technical background.
+    \end{resumeitemize}
+}
+
+\experience[
+    layout=1,
+    title=Using U-Net to Identify Landslides,
+    company=McGill University,
+    location={Montreal, QC},
+    date=\daterange{2021/05/01}{2022/08/31},
+    link=https://www.example.com
+]{
+    Advised by Dr.~James Kirkpatrick \& Dr.~Veronica Prush.
+    \begin{resumeitemize}
+        \item Implemented an image segmentation ML model to identify landslides using geophysical \& morphological indicators.
+        \item Current iteration of the model boasts \textbf{95.3\% accuracy \& a loss of 0.19.}
+        % \item Currently \textbf{collaborating with the California Geological Survey} to expand the project scope.} %implement new methods into the landslide identification workflow \& to improve the performance of the model.
+    \end{resumeitemize}
+}
+
+% \experience[
+%     layout=1,
+%     title=Undergraduate Research Assistant,
+%     company={Earthquake Processes Research Group, McGill University},
+%     location={Montreal, QC},
+%     date=\daterange{2021/01/01}{2021/08/31},
+%     % link=https://www.eps.mcgill.ca/~crowe/EQprocesses
+% ]{
+%     \begin{resumeitemize}
+%         \item Individually designed \& built a website using \textbf{HTML/CSS \& JS} to communicate seismological data of Qu\'ebec to promote public awareness about local earthquake hazards.
+%     \end{resumeitemize}
+% }
+
+\section{Field Work}
+
+\experience[
+    layout=1,
+    title=Graduate Volcanology Seminar,
+    company=McGill University,
+    location={Montreal, QC},
+    date=October 2022,
+]{
+    \begin{resumeitemize}
+        \item Participated in a 1-week field seminar to study the volcanological features and history of the Long Valley region of California.
+    \end{resumeitemize}
+}
+
+\experience[
+    layout=1,
+    title=Field School I (2.5 weeks),
+    company=McGill University,
+    location={Montreal, QC},
+    date=\daterange{2021/05/01}{2021/05/17},
+]{
+    \begin{resumeitemize}
+        \item Produced maps of geologic units \& structures in both Rainbow Basin, CA \& Dublin Gulch, CA.
+        % \item Mapped soil ??? in the High Sierra Nevada Mountains.
+        \item Gained experience with field mapping, using a Brunton compass, \& topographic maps.
+    \end{resumeitemize}
+}
+
+% todo: add projects section
+
+%% AWARDS %%
+\section{Awards}
+
+% \award[
+%     layout=1,
+%     title=Bogo Hack,
+%     organization=MAIS Hacks 2022,
+%     date=2022, % todo check exact date
+% ]{
+%     \begin{resumeitemize}
+%         \item Created a \href{https://devpost.com/software/read-between-the-wines}{web app} using Python \& Google Earth Engine that predicts the price \& quality of a bottle of wine based on climatological conditions of the year \& region it was produced.
+%     \end{resumeitemize}
+% }
+
+% \award[
+%     layout=1,
+%     title={Best Design \& Most Fun; Most Creative Game Dev Hack},
+%     organization=McHacks9,
+%     % date=\daterange{2022/01/21}{2022/01/23},
+%     date=2022, % todo fix date formatting
+% ]{
+%     \begin{resumeitemize}
+%         \item Competed against 331 participants \& created \href{https://pacdemic-man-2vsjz.ondigitalocean.app/}{Pan(demic)-Man}, a COVID-19-themed Pac-Man built with \textit{Unity Game Engine} \& C\#.
+%     \end{resumeitemize}
+% }
+
+% \award[
+%     layout=1,
+%     title={Best AI Hack for Art},
+%     organization=MAIS Hacks 2021,
+%     date=2021, % todo check exact date
+% ]{
+%     \begin{resumeitemize}
+%         \item Competed against 111 participants \& created \href{https://devpost.com/software/maispeare}{MAISpeare}, a LSTM-driven web app (\textit{Python, HTML/CSS}) that generates a poem from any image.
+%     \end{resumeitemize}
+% }
+
+\award[
+    layout=1,
+    title={Geotop 2021 Scholarship Competition},
+    organization=Geotop,
+    date=2021, % todo check exact date
+    amount=\$1500
+]{
+    \begin{resumeitemize}
+        \item Selected based on my research proposal to \textit{Use ML to Identify Landslides} \& academic performance.
+    \end{resumeitemize}
+}
+
+\award[
+    layout=1,
+    title={Best Overall Hack},
+    organization=MAIS Hacks 2020,
+    date=2020, % todo check exact date
+]{
+    \begin{resumeitemize}
+        \item Lead a team against 115 participants to create a XGBoost-driven \href{https://devpost.com/software/mbti-personality-classifier-2eho6w}{web app} (\textit{Python, HTML/CSS}) that predicts MBTI Personality Type based on Twitter data.
+    \end{resumeitemize}
+}
+
+% \award[
+%     layout=1,
+%     title={Alma Mater Scholarship},
+%     organization=McGill University,
+%     date=2019, % todo check exact date
+%     amount=\$3000
+% ]{
+%     \begin{resumeitemize}
+%         \item Entrance bursary to McGill University for academic excellence.
+%     \end{resumeitemize}
+% }
+
+% \award[
+%     layout=1,
+%     title={Stat Staff Professionals Computer Science Scholarship},
+%     organization=Saratoga Springs High School,
+%     date=2019, % todo check exact date
+%     amount=\$1000
+% ]{
+%     \begin{resumeitemize}
+%         \item Selected amongst $\sim40$ students for academic excellence \& demonstrated potential in computer science.
+%     \end{resumeitemize}
+% }
+
+% todo: finish adding old hs awards
+
+%% EXTRA-CURRICULARS %%
+\section{Extra-curriculars}
+
+\experience[
+    layout=1,
+    title=Vice President of Communications,
+    company=The Monteregian Society,
+    location={Montreal, QC},
+    date=\daterange{2020/09/01}{2023/04/31},
+]{
+    \begin{resumeitemize}
+        \item Managed communications for the undergraduate student council for Earth \& Planetary Sciences at McGill University.
+        % \item Designed \& built the council's website to host student resources, events, \& other information.
+    \end{resumeitemize}
+}
+
+\experience[
+    layout=1,
+    title=Member,
+    company={ML for Geoscience Reading Group, McGill University},
+    location={Montreal, QC},
+    date=\daterange{2021/01/01}{2021/05/31},
+]{
+    \begin{resumeitemize}
+        \item Participated in a reading group to examine current papers in ML applications in the geosciences.
+    \end{resumeitemize}
+}
+
+% todo NHS, SWAM
+
+%% PROFESSIONAL DEVELOPMENT %%
+% \section{Professional Development}
+
+% \experience[
+%     layout=1,
+%     title=SCIWS12 Tutorial on Machine Learning \& Deep Learning,
+%     company=American Geoscience Union,
+%     location={Virtual},
+%     date=December 2020,
+%     link=https://www.agu.org/Events/FM20/SCIWS12-15-Tuesday-December
+% ]{
+%     \begin{resumeitemize}
+%         \item Attended a full-day technical workshop on machine learning \& deep learning for the environmental \& geosciences.
+%     \end{resumeitemize}
+% }
+
+% \experience[
+%     layout=1,
+%     title=Accelerated Introduction to ML,
+%     company=McGill Artificial Intelligence Society,
+%     location={Montreal, QC},
+%     date=\daterange{2020/09/01}{2020/12/31},
+%     link=https://mcgillai.com/mais202
+% ]{
+%     \begin{resumeitemize}
+%         \item Selected through a technical interview to participate in a \textbf{12-week} accelerated course of ML. % through weekly lectures, assignments, \& a final project fair
+%         \item Webscraped data to train a CNN to classify rock/mineral/fossil sample images into 4 classes; deployed as a webapp.
+%     \end{resumeitemize}
+% }
+
+
+%% SKILLS %%
+\section{Skills}
+
+\skills[
+    cols=1, %
+]{
+    \textbf{Programming Languages}: Python, Julia, C{\small++}, C, Java, DB2/SQL/MySQL, R, Bash, MATLAB, HTML/CSS, OCaml, MIPS Assembly\\
+    \textbf{Tools}: Git, Linux/Unix, \LaTeX, Jupyter, QGIS/ArcGIS, AWS EC2, VS Code, RESTful APIs, MongoDB, Jira, Jenkins, Liquibase
+}
+
+%% PUBLICATIONS \& PRESENTATIONS %%
+\section{Publications \& Presentations}
+\nocite{*}
+\printbibliography[heading=none]
+
+% \section{Interests}
+
+%% FOOTER %%
+\lastupdated
+
+%% END DOCUMENT %%
+\end{document}

@@ -1,0 +1,42 @@
+% resume.sty
+\ProvidesPackage{resume}[2024/08/05 Academic RESUME Stylings]
+
+% define colors
+\RequirePackage{xcolor}
+\definecolor{accent}{HTML}{2e70bf}
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+
+\lightercolor{accent}{25}{lightaccent}
+\lightercolor{accent}{50}{darkaccent}
+\lightercolor{black}{50}{halfblack}
+
+% set paragraph indent, skip to zero
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{0pt}
+
+% set up hypperef links
+\hypersetup{
+    colorlinks,
+    breaklinks,
+    urlcolor=accent,
+    linkcolor=accent,
+}
+
+% todo: underline all links (but not the chain icon)
+% \makeatletter
+% \patchcmd{\hyper@link@}
+%   {{\Hy@tempb}{#4}}
+%   {{\Hy@tempb}{\underline{#4}}}
+%   {}{}
+% \makeatother
+
+% style section headings
+\RequirePackage{titlesec}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+% \titleformat{⟨command⟩}[⟨shape⟩]{⟨format⟩}{⟨label⟩}{⟨sep⟩}{⟨before-code⟩}[⟨after-code⟩]
+\titleformat{\section}[block]{\color{accent}\large\scshape\raggedright}{}{0em}{}[\titlerule]
+
+\titlespacing{\section}{0ex}{-0.15em}{\defaultvspacing} % left, before, after
