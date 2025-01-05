@@ -78,7 +78,7 @@
 
 %% set default spacing
 % set default vertical spacing
-\newcommand{\defaultvspacing}{0.15cm}
+\newcommand{\defaultvspacing}{0.12cm}
 
 % set default horizontal spacing
 \newcommand{\defaulthspacing}{0.1cm}
