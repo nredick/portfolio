@@ -516,6 +516,78 @@
 }
 \makeatother
 
+% block for certifications
+% should have title, awarding org, date, optional expiration date, and optional description, optional link
+
+\makeatletter
+% Define key-value pairs for the certification block
+\define@key{certification}{layout}[2]{\def\CERT@layout{#1}} % Default layout is 2
+\define@key{certification}{title}{\def\CERT@title{#1}} % Certification Title
+\define@key{certification}{organization}{\def\CERT@organization{#1}} % Awarding Organization
+\define@key{certification}{date}{\def\CERT@date{#1}} % Date
+\define@key{certification}{expiration}[]{\def\CERT@expiration{#1}} % Expiration Date (optional)
+\define@key{certification}{link}[]{\def\CERT@link{#1}} % Link to certification (optional)
+
+% Certification command with key-value pairs and a separate description argument
+\NewDocumentCommand{\cert}{O{} m}{
+    \setkeys{certification}{layout=2,title=,organization=,date=,expiration=,link=,#1}
+
+    % Determine the layout based on the `layout` key
+    \begin{switch}{\CERT@layout}
+        \case{1}{
+            % Case for 1-line layout
+            \begin{tabularx}{\textwidth}{@{}lXr@{}}
+                % Display the certification title and organization
+                \textbf{\CERT@title},\ \CERT@organization
+                % Optionally include the expiration date if provided
+                \ifx\CERT@expiration\@empty
+                    % Do nothing if expiration date is not provided
+                \else
+                    ~(Expires \CERT@expiration) % Add expiration date in parentheses if provided
+                \fi
+                % Align the date on the right
+                & \hfill
+                & \CERT@date
+            \end{tabularx}
+
+            % Description as a separate argument
+            \ifx#2\undefined
+                % Do nothing if no description
+            \else
+                #2
+            \fi
+        }
+        \case{2}{
+            % Case for 2-line layout (default)
+            \begin{tabularx}{\textwidth}{@{}lXr@{}}
+                % Display the certification title
+                \textbf{\CERT@title}
+                % Align the date on the right
+                & \hfill
+                & \CERT@date \\ % Certification Title and Date
+                % Display the awarding organization
+                \CERT@organization
+                % Optionally include the expiration date if provided
+                & \hfill
+                & \ifx\CERT@expiration\@empty
+                    % Do nothing if no expiration date
+                \else
+                    \CERT@expiration
+                \fi
+            \end{tabularx}
+
+            % Description as a separate argument
+            \ifx#2\undefined
+                % Do nothing if no description
+            \else
+                #2
+            \fi
+        }
+    \end{switch}
+
+    % Add vertical spacing after the entry
+    \vspace{\defaultvspacing}
+}
 
 % footer
 \newcommand{\lastupdated}{
