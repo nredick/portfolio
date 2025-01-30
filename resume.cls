@@ -3,7 +3,7 @@
 
 % base class, font size
 % todo: make font size adjustable
-\LoadClass[10.5pt]{article}
+\LoadClass[10pt]{article}
 
 % font family
 \RequirePackage[T1]{fontenc}
@@ -78,7 +78,7 @@
 
 %% set default spacing
 % set default vertical spacing
-\newcommand{\defaultvspacing}{2.5pt}
+\newcommand{\defaultvspacing}{2.75pt}
 
 % set default horizontal spacing
 \newcommand{\defaulthspacing}{1pt}
