@@ -39,4 +39,21 @@
 % \titleformat{⟨command⟩}[⟨shape⟩]{⟨format⟩}{⟨label⟩}{⟨sep⟩}{⟨before-code⟩}[⟨after-code⟩]
 \titleformat{\section}[block]{\color{accent}\large\scshape\raggedright}{}{0em}{}[\titlerule]
 
-\titlespacing{\section}{0ex}{-0.15em}{\defaultvspacing} % left, before, after
+\titlespacing{\section}{0pt}{0pt}{\defaultvspacing} % left, before, after
+
+% add space before printbibliography text
+\renewcommand{\bibsetup}{\vspace{\defaultvspacing}}
+
+% make it so that unpublished bib entries are treated as misc
+\DeclareBibliographyAlias{unpublished}{misc}
+
+\DeclareSourcemap{
+  \maps{
+    \map{
+      \step[typesource=unpublished, typetarget=misc]
+    }
+  }
+}
+
+% bold titles in bibliography
+% \DeclareFieldFormat*{title}{\textbf{#1}}

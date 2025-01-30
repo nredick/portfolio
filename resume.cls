@@ -3,7 +3,7 @@
 
 % base class, font size
 % todo: make font size adjustable
-\LoadClass[10pt]{article}
+\LoadClass[10.5pt]{article}
 
 % font family
 \RequirePackage[T1]{fontenc}
@@ -25,8 +25,8 @@
     a4paper,
     left=1cm,
     right=1cm,
-    top=0.5cm,
-    bottom=0.25cm
+    top=0.75cm,
+    bottom=0.75cm
 ]{geometry}
 
 % switch-case implementation (https://tex.stackexchange.com/a/420399)
@@ -64,7 +64,7 @@
 % publications import
 \RequirePackage[ % References
     backend=biber,
-    style=nature, % apa, nature, ieee, etc.
+    style=apa, % apa, nature, ieee, etc.
     sorting=ydnt, % Sort by year (descending), name, title
 ]{biblatex}
 \addbibresource{publications.bib}
@@ -78,10 +78,10 @@
 
 %% set default spacing
 % set default vertical spacing
-\newcommand{\defaultvspacing}{0.12cm}
+\newcommand{\defaultvspacing}{2.5pt}
 
 % set default horizontal spacing
-\newcommand{\defaulthspacing}{0.1cm}
+\newcommand{\defaulthspacing}{1pt}
 
 % define a default separator
 \RequirePackage{graphicx}
@@ -188,7 +188,7 @@
             \end{flushright}
         }
     \end{switch}
-    \vspace{-\defaultvspacing}
+    \vspace{-0.3cm}
 }
 
 % inline location def
@@ -244,7 +244,7 @@
                 & \ifx\SH@gpa\undefined
                     \SH@date
                 \else
-                    \SH@gpa\separator\SH@date
+                    \SH@gpa\,\separator\SH@date
                 \fi
             \end{tabularx}
 
@@ -388,7 +388,7 @@
             % Case for 1-line layout
             \begin{tabularx}{\textwidth}{@{}lXr@{}}
                 % Display the award title and organization
-                \textbf{\AW@title},\ \AW@organization
+                \textit{\AW@title},\ \AW@organization
                 % Optionally include the amount if provided
                 \ifx\AW@amount\@empty
                     % Do nothing if amount is not provided
@@ -411,7 +411,7 @@
             % Case for 2-line layout (default)
             \begin{tabularx}{\textwidth}{@{}lXr@{}}
                 % Display the award title
-                \textbf{\AW@title}
+                \textit{\AW@title}
                 % Align the date on the right
                 & \hfill
                 & \AW@date \\ % Award Title and Date
@@ -435,8 +435,6 @@
         }
     \end{switch}
 
-    % Add vertical spacing after the entry
-    \vspace{\defaultvspacing}
 }
 \makeatother
 
@@ -485,7 +483,7 @@
             \node[anchor=west, text=white, inner sep=0pt] at (0.125, \height/2) {\small{#2}};
         \fi
     \end{tikzpicture}
-    \vspace{\defaultvspacing}
+
 }
 \makeatother
 
@@ -530,7 +528,7 @@
 
 % Certification command with key-value pairs and a separate description argument
 \NewDocumentCommand{\cert}{O{} m}{
-    \setkeys{certification}{layout=2,title=,organization=,date=,expiration=,link=,#1}
+    \setkeys{certification}{layout=1,title=,organization=,date=,expiration=,link=,#1}
 
     % Determine the layout based on the `layout` key
     \begin{switch}{\CERT@layout}
@@ -538,7 +536,7 @@
             % Case for 1-line layout
             \begin{tabularx}{\textwidth}{@{}lXr@{}}
                 % Display the certification title and organization
-                \textbf{\CERT@title},\ \CERT@organization
+                \textit{\CERT@title},\ \CERT@organization
                 % Optionally include the expiration date if provided
                 \ifx\CERT@expiration\@empty
                     % Do nothing if expiration date is not provided
@@ -561,7 +559,7 @@
             % Case for 2-line layout (default)
             \begin{tabularx}{\textwidth}{@{}lXr@{}}
                 % Display the certification title
-                \textbf{\CERT@title}
+                \textit{\CERT@title}
                 % Align the date on the right
                 & \hfill
                 & \CERT@date \\ % Certification Title and Date
@@ -573,6 +571,77 @@
                     % Do nothing if no expiration date
                 \else
                     \CERT@expiration
+                \fi
+            \end{tabularx}
+
+            % Description as a separate argument
+            \ifx#2\undefined
+                % Do nothing if no description
+            \else
+                #2
+            \fi
+        }
+    \end{switch}
+
+    % % Add vertical spacing after the entry
+    % \vspace{\defaultvspacing}
+}
+
+% create a block for teaching experience
+\makeatletter
+% Define key-value pairs for the teaching block
+\define@key{teaching}{layout}[2]{\def\TEACH@layout{#1}} % Default layout is 2
+\define@key{teaching}{title}{\def\TEACH@title{#1}} % Course Title
+\define@key{teaching}{institution}{\def\TEACH@institution{#1}} % Institution Name
+\define@key{teaching}{location}{\def\TEACH@location{#1}} % Institution Location
+\define@key{teaching}{date}{\def\TEACH@date{#1}} % Date
+\define@key{teaching}{link}[]{\def\TEACH@link{#1}} % Link to course (optional)
+
+% Teaching command with key-value pairs and a separate description argument
+\NewDocumentCommand{\teaching}{O{} m}{
+    \setkeys{teaching}{layout=2,title=,institution=,location=,date=,link=,#1}
+
+    % Determine the layout based on the `layout` key
+    \begin{switch}{\TEACH@layout}
+        \case{1}{
+            % Case for 1-line layout
+            \begin{tabularx}{\textwidth}{@{}lXr@{}}
+                % Display the course title and institution
+                \textbf{\TEACH@title},\ \TEACH@institution
+                % Optionally include the location if provided
+                \ifx\TEACH@location\@empty
+                    % Do nothing if location is not provided
+                \else
+                    ~(\TEACH@location) % Add location in parentheses if provided
+                \fi
+                % Align the date on the right
+                & \hfill
+                & \TEACH@date
+            \end{tabularx}
+
+            % Description as a separate argument
+            \ifx#2\undefined
+                % Do nothing if no description
+            \else
+                #2
+            \fi
+        }
+        \case{2}{
+            % Case for 2-line layout (default)
+            \begin{tabularx}{\textwidth}{@{}lXr@{}}
+                % Display the course title
+                \textbf{\TEACH@title}
+                % Align the date on the right
+                & \hfill
+                & \TEACH@date \\ % Course Title and Date
+                % Display the institution name
+                \TEACH@institution
+                % Optionally include the location if provided
+                & \hfill
+                & \ifx\TEACH@location\@empty
+                    % Do nothing if no location
+                \else
+                    \TEACH@location
                 \fi
             \end{tabularx}
 
